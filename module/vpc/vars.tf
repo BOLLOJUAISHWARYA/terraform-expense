@@ -1,1 +1,1 @@
-variable "vpc_cidr_block" {}           #step4: declare variable in module
+variable "vpc_cidr_block" {}
