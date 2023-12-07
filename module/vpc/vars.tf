@@ -9,3 +9,4 @@ variable "azs" {}
 variable "account_id" {}
 variable "default_vpc_id" {}
 variable "default_routetable_id" {}
+variable "default_vpc_cidr" {}
