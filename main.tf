@@ -8,5 +8,8 @@ module "vpc" {
   app_subnets = var.app_subnets
   db_subnets = var.db_subnets
   azs = var.azs
+  account_id = var.account_id
+  default_vpc_id = var.default_vpc_id
+  default_routetable =var.default_routetable
 }
 
