@@ -8,4 +8,4 @@ variable "db_subnets" {}
 variable "azs" {}
 variable "account_id" {}
 variable "default_vpc_id" {}
-variable "default_routetable" {}
+variable "default_routetable_id" {}
