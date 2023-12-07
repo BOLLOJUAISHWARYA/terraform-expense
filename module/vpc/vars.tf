@@ -1,3 +1,1 @@
-resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
-}
+variable "vpc_cidr_block" {}           #step4: declare variable in module

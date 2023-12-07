@@ -1,0 +1,1 @@
+variable "vpc_cidr_block" {} #step2 declare variable in root module
