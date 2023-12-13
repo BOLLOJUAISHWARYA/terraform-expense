@@ -1,13 +1,13 @@
 resource "aws_db_parameter_group" "main"{
   name = "${var.env}-mysql-rds"
   family = "mysql5.7"
-  tags = merge(var.tags,{Name = "${var.env}-mysql-rds"})
+  tags = merge(var.tags,{ Name = "${var.env}-mysql-rds"})
 }
 
 resource "aws_db_subnet_group" "main" {
   name = "${var.env}-mysql-rds"
   subnet_ids = var.subnets
-  tags = merge(var.tags,{Name = "${var.env}-mysql-rds"})
+  tags = merge(var.tags,{ Name = "${var.env}-mysql-rds"})
 }
 
 resource "aws_security_group" "main" {
@@ -31,9 +31,7 @@ resource "aws_security_group" "main" {
     ipv6_cidr_blocks = ["::/0"]
   }
 
-  tags = {
-    Name = merge(var.tags,{Name = "${var.env}-mysql-rds"})
-  }
+  tags = merge(var.tags,{ Name = "${var.env}-mysql-rds"})
 }
 
 resource "aws_db_instance" "default" {
@@ -49,7 +47,7 @@ resource "aws_db_instance" "default" {
   multi_az = true #makes sql available if one instance is down
   identifier = "${var.env}-mysql-rds"
   storage_type = "gp3"
-  tags = merge(var.tags,{Name = "${var.env}-mysql-rds"})
+  tags = merge(var.tags,{ Name = "${var.env}-mysql-rds"})
   db_subnet_group_name = aws_db_subnet_group.main.name
   vpc_security_group_ids = [aws_security_group.main.id]
 }
